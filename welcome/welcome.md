@@ -1,6 +1,5 @@
 ---
 layout: welcome
-permalink: /welcome/
-type:
-title: Welcome
+title: "Welcome to the ABOITIZ Audio Guide"
+permalink: /
 ---

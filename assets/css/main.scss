@@ -5,52 +5,65 @@
 
 
 
-// Our variables
-$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* --------------------------
+   Custom Theme Overrides
+   -------------------------- */
 
+/* Global font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+$base-font-family: "Poppins", sans-serif;
 $base-font-size:   20px;
-
-$base-font-weight: 400;
+$base-font-weight: 600; // Semi Bold
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
+/* Body background */
+$background-color:  #F37922;
+$background-darker: #d4691e;
+
+/* Header & brand color */
+$brand-color: #000000; // Header background
+$text-color:  #FFFFFF; // Header and body text
+
+$anchor-hover-color: lighten($brand-color, 30%);
+
+/* Misc spacing */
 $spacing-unit:     30px;
 
-$text-color:       	#fafafa;
-$background-hr:		#383838;
-$background-color: 	#222222;
-$background-darker: #1B1B1B;
-$brand-color:	   	#43A047;
-$anchor-hover-color:	lighten($brand-color, 30%);
-
+/* Audio player colors */
 $player-now-playing-size:   13px;
-$player-height:		64px;
-$player-button-size:	48px;
-$player-bgcolor:	$brand-color;
-$player-scrubber-color:	darken($brand-color, 1%);
-$player-loaded-color:	darken($brand-color, 5%);
-$player-progress-color:		lighten($brand-color, 10%);
-$player-play-color:		lighten($brand-color, 5%);
-$player-progress-height: 10px;
+$player-height:		        64px;
+$player-button-size:	    48px;
+$player-bgcolor:	        $brand-color;
+$player-scrubber-color:	    darken($brand-color, 1%);
+$player-loaded-color:	    darken($brand-color, 5%);
+$player-progress-color:	    lighten($brand-color, 10%);
+$player-play-color:	        lighten($brand-color, 5%);
+$player-progress-height:    10px;
 
-$tile-bgcolor:	   $brand-color;
-$tile-color:	   #fafafa;
-$tile-size:		   56px;
-$tile-size-large:  64px;
-$tile-border-radius:	2px;
+/* Tile colors */
+$tile-bgcolor:	    $brand-color;
+$tile-color:	    #FFFFFF;
+$tile-size:		    56px;
+$tile-size-large:   64px;
+$tile-border-radius: 2px;
 
-$grey-color:       $brand-color;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+/* Greys (used for borders, hr lines, etc.) */
+$background-hr:     #FFFFFF;
+$grey-color:        $brand-color;
+$grey-color-light:  lighten($grey-color, 40%);
+$grey-color-dark:   darken($grey-color, 25%);
 
-// Width of the content area
-$content-width:    800px;
+/* Layout breakpoints */
+$content-width: 800px;
+$on-tiny:        310px;
+$on-palm:        640px;
+$on-laptop:      800px;
 
-$on-tiny:          310px;
-$on-palm:          640px;
-$on-laptop:        800px;
+$height-600:     600px;
 
-$height-600:       600px;
+/* Mixins remain unchanged */
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -71,6 +84,18 @@ $height-600:       600px;
     }
 }
 
+/* Desktop background */
+body {
+    background: url("/assets/img/background/desktop_bg.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+@include media-query($on-palm) {
+    body {
+        background: url("/assets/img/background/phone_bg.png") no-repeat center center fixed;
+        background-size: cover;
+    }
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
